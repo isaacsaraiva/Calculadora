@@ -115,10 +115,10 @@
 
             if (resto !== 0) {
       document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">Os ' + resto + ' primeiros administradores ter&atildeo que fechar ' + (resultado + 1) + ' den&uacutencias cada, e os outros ' + (numAdministradores - resto) + ' administradores restantes fechar&atildeo ' + resultado + ' den&uacutencias.';
-    }
-    if (resto === 0 && resultado > 1) {
-      document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">Cada administrador fechar&aacute ' + resultado + ' den&uacutencias.';}  else {
-      document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">Cada administrador fechar&aacute ' + resultado + ' den&uacutencia.';}
+    } else if (resto === 0 && resultado > 1) {
+      document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">Cada administrador fechar&aacute ' + resultado + ' den&uacutencias.';} else {
+          document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">Cada administrador fechar&aacute ' + resultado + ' den&uacutencia.';
+        }
     }
       
   function redirect1() {
@@ -144,6 +144,7 @@ function redirect4() {
     window.open("https://sv4.brasilplayshox.com.br", "_blank");
   }
 }
+
 
     </script>
   </body>
