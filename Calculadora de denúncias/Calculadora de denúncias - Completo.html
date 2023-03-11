@@ -113,12 +113,20 @@
             var resultado = Math.floor(numDenuncias / numAdministradores);
             var resto = numDenuncias % numAdministradores;
 
-            if (resto !== 0) {
-      document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">Os ' + resto + ' primeiros administradores ter&atildeo que fechar ' + (resultado + 1) + ' den&uacutencia' + (resultado > 1 ?  's' : '') + ' cada, e os outros ' + (numAdministradores - resto) + ' administrador' + (numAdministradores - resto > 1 ?  'es' : '') + ' restantes fechar&atildeo ' + resultado + ' den&uacutencia' + (resultado > 1 ?  's' : '') + '.';
-    }
-    if (resto === 0) {
-      document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">Cada administrador fechar&aacute ' + resultado + ' den&uacutencia' + (resultado > 1 ?  's' : '') + '.';
+            const message = `
+  <strong>
+    <span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">
+      ${
+        resto !== 0 ?
+        `Os ${resto} primeiros administradores terão que fechar ${resultado + 1} denúncia${resultado > 1 ? 's' : ''} cada, e os outros ${numAdministradores - resto} administrador${numAdministradores - resto > 1 ? 'es' : ''} restantes fecharão ${resultado} denúncia${resultado > 1 ? 's' : ''}.` :
+        `Cada administrador fechará ${resultado} denúncia${resultado > 1 ? 's' : ''}.`
       }
+    </span>
+  </strong>
+`;
+
+document.getElementById("resultado").innerHTML = message;
+
     }
       
   function redirect1() {
