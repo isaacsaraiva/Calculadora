@@ -114,24 +114,11 @@
             var resto = numDenuncias % numAdministradores;
 
             if (resto !== 0) {
-
-                if (resultado > 1) {
-                    document.getElementById("resultado").innerHTML = "Os " + resto + " primeiros administradores ter&atildeo que fechar " + (resultado + 1) + " den&uacutencias cada, e os outros " + (numAdministradores - resto) + " administradores restantes fechar&atildeo " + resultado + " den&uacutencias.";
-                } else {
-                    document.getElementById("resultado").innerHTML = "Os " + resto + " primeiros administradores ter&atildeo que fechar " + (resultado + 1) + " den&uacutencias cada, e os outros " + (numAdministradores - resto) + " administradores restantes fechar&atildeo " + resultado + " den&uacutencia.";
-                }
-                if (resto = 1 && resultado > 1) {
-                    document.getElementById("resultado").innerHTML = "O primeiro administrador ter&aacute que fechar " + (resultado + 1) + " den&uacutencias cada, e os outros " + (numAdministradores - resto) + " administradores restantes fechar&atildeo " + resultado + " den&uacutencias.";
-                }
-            }
-            if (resto === 0) {
-
-                if (resultado > 1) {
-                    document.getElementById("resultado").innerHTML = "Cada administrador fecha " + resultado + " denúncias.";
-                } else {
-                    document.getElementById("resultado").innerHTML = "Cada administrador fecha " + resultado + " denúncia.";
-                }
-            }
+      document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px;"><span style="font-family:Verdana,Geneva,sans-serif;">Os ' + resto + ' primeiros administradores ter&atildeo que fechar ' + (resultado + 1) + ' den&uacutencias cada, e os outros ' + (numAdministradores - resto) + ' administradores restantes fechar&atildeo ' + resultado + ' den&uacutencias.';
+    }
+    if (resto === 0) {
+      document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px;"><span style="font-family:Verdana,Geneva,sans-serif;">Cada administrador fechar&aacute ' + resultado + ' den&uacutencias.';
+    }
         }
       
   function redirect1() {
@@ -157,9 +144,7 @@ function redirect4() {
     window.open("https://sv4.brasilplayshox.com.br", "_blank");
   }
 }
-//Função para chamar a função calcular quando um dos campos for alterado
-//document.getElementById("numAdministradores").addEventListener("input", calcular);
-//document.getElementById("numDenuncias").addEventListener("input", calcular);
+
 
     </script>
   </body>
