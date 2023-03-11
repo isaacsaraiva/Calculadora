@@ -114,11 +114,11 @@
             var resto = numDenuncias % numAdministradores;
 
             if (resto !== 0) {
-      document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">Os ' + resto + ' primeiros administradores ter&atildeo que fechar ' + (resultado + 1) + ' den&uacutencias cada, e os outros ' + (numAdministradores - resto) + ' administradores restantes fechar&atildeo ' + resultado + ' den&uacutencias.';
-    } else if (resto === 0 && resultado > 1) {
-      document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">Cada administrador fechar&aacute ' + resultado + ' den&uacutencias.';} else {
-          document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">Cada administrador fechar&aacute ' + resultado + ' den&uacutencia.';
-        }
+      document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">Os ' + resto + ' primeiros administradores ter&atildeo que fechar ' + (resultado + 1) + ' den&uacutencia' + (resultado > 1 ?  's' : '') + ' cada, e os outros ' + (numAdministradores - resto) + ' administrador' + (numAdministradores - resto > 1 ?  'es' : '') + ' restantes fechar&atildeo ' + resultado + ' den&uacutencia' + (resultado > 1 ?  's' : '') + '.';
+    }
+    if (resto === 0) {
+      document.getElementById("resultado").innerHTML = '<strong><span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">Cada administrador fechar&aacute ' + resultado + ' den&uacutencia' + (resultado > 1 ?  's' : '') + '.';
+      }
     }
       
   function redirect1() {
