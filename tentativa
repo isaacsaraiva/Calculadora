@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <title>C&aacutelculo de den&uacutencias</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Auxílio para os administradores com relação à contagem precisando apertar no "Calcular".>
+        <meta charset="utf-8"/>
+        <meta http-equiv="content-language" content="pt-br">
+        <meta name="author" content="Isaac">
+        <meta name="reply-to" content="isaac.saraiva17@gmail.com">
+
+    <style>
+
+    body {
+    background-color: #111;
+    color: #fff;
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    background-image: url("https://www.brasilplayshox.com.br/assets_site/img/logo.png");
+    background-repeat: no-repeat;
+    background-position: 50% -10%;
+    background-size: cover;
+    opacity: 0.9;
+  }
+
+    h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+  }
+  
+  a {
+    color: #00f;
+  }
+  
+  a:hover {
+    color: #fff;
+  }
+  
+  input, textarea, select {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 10px;
+    width: 90%;
+  }
+  
+  button {
+    background-color: #00f;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 50px auto;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  }
+    </style>
+
+  </head>
+
+  <body>
+    <div class="container"> <! Interface !>
+      <h2>Contagem</h2>
+      <p>N&ordm Administradores: <input type="number" id="numAdministradores"></p>
+      <p>Quantidade de den&uacutencias: <input type="number" id="numDenuncias"></p>
+        
+      <button onclick="calcular()">Calcular</button>
+      <br><br><br>
+
+      <button onclick="redirect1()">SV 1</button>
+      <button onclick="redirect2()">SV 2</button>
+      <button onclick="redirect3()">SV 3</button>
+      <button onclick="redirect4()">SV 4</button>
+
+      <p id="resultado"></p>
+    </div>
+    <script>
+        
+        function calcular() {
+            var numAdministradores = document.getElementById("numAdministradores").value;
+            var numDenuncias = document.getElementById("numDenuncias").value;
+
+            if (!numAdministradores || !numDenuncias) {
+                alert("Por favor, preencha todos os campos!");
+                return;
+            }
+
+            if (numAdministradores == 0) {
+                alert("A quantidade de administradores não pode ser zero!");
+                return;
+            }
+
+            if (numDenuncias == 0) {
+                alert("A quantidade de denúncias não pode ser zero!");
+                return;
+            }
+
+            var resultado = Math.floor(numDenuncias / numAdministradores);
+            var resto = numDenuncias % numAdministradores;
+
+            const message = `
+  <strong>
+    <span style="font-size:20px; font-family:Verdana,Geneva,sans-serif;">
+      ${
+        resto !== 0 ?
+        `Os ${resto} primeiros administradores terão que fechar ${resultado + 1} denúncia${resultado > 1 ? 's' : ''} cada, e os outros ${numAdministradores - resto} administrador${numAdministradores - resto > 1 ? 'es' : ''} restantes fecharão ${resultado} denúncia${resultado > 1 ? 's' : ''}.` :
+        `Cada administrador fechará ${resultado} denúncia${resultado > 1 ? 's' : ''}.`
+      }
+    </span>
+  </strong>
+`;
+
+document.getElementById("resultado").innerHTML = message;
+
+    }
+      
+  function redirect1() {
+  if (confirm("Ir para o site do SV 1?")) {
+    window.open("https://sv1.brasilplayshox.com.br", "_blank");
+  }
+}
+
+function redirect2() {
+  if (confirm("Ir para o site do SV 2?")) {
+    window.open("https://sv2.brasilplayshox.com.br", "_blank");
+  }
+}
+
+function redirect3() {
+  if (confirm("Ir para o site do SV 3?")) {
+    window.open("https://sv3.brasilplayshox.com.br", "_blank");
+  }
+}
+
+function redirect4() {
+  if (confirm("Ir para o site do SV 4?")) {
+    window.open("https://sv4.brasilplayshox.com.br", "_blank");
+  }
+}
+
+
+    </script>
+  </body>
+</html>
